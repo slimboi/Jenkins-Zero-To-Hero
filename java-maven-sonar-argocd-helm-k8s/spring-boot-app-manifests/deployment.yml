@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: slimboi/ultimate-cicd:8
+        image: slimboi/ultimate-cicd:12
         ports:
         - containerPort: 8080
