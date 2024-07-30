@@ -56,8 +56,8 @@ pipeline {
                     // Print the file before modification
                     sh 'cat java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml'
                     
-                    // Replace the image tag
-                    sh 'sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml'
+                    // Replace the image tag dynamically
+                    sh 'sed -i "s|image: slimboi/ultimate-cicd:.*|image: slimboi/ultimate-cicd:${BUILD_NUMBER}|g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml'
                     
                     // Print the file after modification
                     sh 'cat java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml'
